@@ -1,5 +1,5 @@
 try {
-  const data = await fetch("../server.js")
+  const data = await fetch("/api")
   const response = await data.json()
   renderCards(response)
 } catch (err) {
