@@ -14,4 +14,3 @@ eventSource.onmessage = (event) => {
 eventSource.onerror = () => {
   console.log("Connection lost. Attempting to reconnect...")
 }
-
