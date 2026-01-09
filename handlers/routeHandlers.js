@@ -12,6 +12,7 @@ export async function handleGet(res) {
     sendResponse(res, 'application/json', 200, content)
 }
 
+// handle POST
 export async function handlePost(req, res) {
     try {
         const parsedBody = await parseJSONbody(req)
@@ -25,4 +26,19 @@ export async function handlePost(req, res) {
         sendResponse(res, 'application/json', 400, JSON.stringify({error: err}))
     }
 }
-// handle POST
+
+// handle NEWS
+export async function handleNews(req, res) {
+    res.statusCode = 200
+    res.setHeader = ('Content-Type', 'text/event-stream')
+    res.setHeader = ('Cache-Control', 'no-cache')
+    res.setHeader = ('Connection', 'keep-alive')
+
+    setInterval(() => {
+        let randomIndex = Math.floor(Math.random() * stories.length)
+
+        res.write(
+            `data: { event:  }`
+        )
+    })
+}
